@@ -88,10 +88,38 @@ int power_tester()
     return EXIT_SUCCESS;
 };
 
+#include <iostream>
+
+int Calculate_speed()
+{
+/*Assignment 1:
+zrobiæ program, który wczytuje
+wartoœæ prêdkoœci w m/s
+i przelicza j¹ na km/h
+
+mo¿emy przeliczaæ inne jednoski
+np. cal na J, mile na km itp...
+*/
+    long double speed = 0;
+    std::wcout << "Specify speed in m/s or 0 to finish: ";
+    std::wcin >> speed;
+    while (speed && std::wcin.good())
+    {
+        std::cout << speed << " m/s to " << double(speed * double(3.6)) << " km/h.";
+        std::wcout << "\n\nSpecify speed in m/s or 0 to finish: ";
+        std::wcin >> speed;
+    };
+
+    std::cout << "\n\aFarewell.";
+    return EXIT_SUCCESS;
+};
+
+
+
 int Module_01() {
 	const unsigned int elements = 10;
     factorial_tester();
     power_tester();
-
+    Calculate_speed();
 	return EXIT_SUCCESS;
 };
